@@ -46,6 +46,12 @@ end
 get "/:birthdate" do
 	birthdate = params[:birthdate]
 	birth_path_num = user_birthpath_number(birthdate)
-	message = message(birth_path_num)
-	"#{message}"
+	@message = message(birth_path_num)
+	
+	erb :index
+end
+
+#2nd page of web app, which displays all the possible messages
+get "/messageindex/" do
+
 end
