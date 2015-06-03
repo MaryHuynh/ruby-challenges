@@ -5,7 +5,7 @@ ENV['RACK_ENV'] = 'test'
 
 # look in this directory!
 $:.unshift File.join(File.dirname(__FILE__))
-require_relative File.join(File.dirname(__FILE__), "../numerology_web_app")  # <-- your sinatra app
+require_relative File.join(File.dirname(__FILE__), "numerology_web_app")  # <-- your sinatra app
 
 # require testing gems
 require 'rspec'
