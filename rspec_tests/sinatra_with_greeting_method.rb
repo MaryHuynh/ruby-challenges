@@ -25,8 +25,11 @@ get "/:name" do
 	name = params[:name].capitalize
 	#set a variable my_greeting equal to the output from calling the greeting method
 	@my_greeting = greeting(name)
-	#display the output of the my_greeting variable as a string using string interpolation
-	"#{my_greeting}"
-	
+
 	erb :home
+end
+
+get "/time/" do
+	@time = determine_current_hour
+	erb :time
 end
