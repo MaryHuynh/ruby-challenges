@@ -7,6 +7,7 @@ end
 
 #show the form for creating a new person
 get "/people/new" do
+	@person = Person.new
 	erb :"/people/new"
 end
 
@@ -49,6 +50,13 @@ get "/people/:id" do
 	@message = Person.get_message(birth_path_num)
 	
 	erb :"/people/show"
+end
+
+#route for delete request
+delete "/people/:id" do
+	person = Person.find(params[:id])
+	person.delete
+	redirect "/people"
 end
 
 
