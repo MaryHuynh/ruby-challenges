@@ -1,6 +1,6 @@
 class Person < ActiveRecord::Base
 
-	def self.user_birthpath_number(birthdate)
+	def self.get_birth_path_num(birthdate)
 	
 		number = birthdate[0].to_i + birthdate[1].to_i + birthdate[2].to_i + birthdate[3].to_i + birthdate[4].to_i + birthdate[5].to_i + birthdate[6].to_i + birthdate[7].to_i
 		number = number.to_s
@@ -15,7 +15,7 @@ class Person < ActiveRecord::Base
 	end
 
 
-	def self.message(number)
+	def self.get_message(number)
 		case(number)
 			when(1)
 				message = "One is the leader. The number one indicates the ability to stand alone, and is a strong vibration. Ruled by the Sun."
