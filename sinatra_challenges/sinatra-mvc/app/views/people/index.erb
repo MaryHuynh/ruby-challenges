@@ -18,6 +18,9 @@
 				<td>
 					<%= "#{person.birthdate}" %> 
 				</td>
+				<td>
+					<a href="<%="/people/#{person.id}/edit" %>"> Edit</a>
+				</td>
 			</tr>
 		<% end %>
 	</tbody>

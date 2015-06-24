@@ -23,6 +23,23 @@ post "/people" do
 	redirect "/people/#{person.id}" 
 end
 
+#get request to edit a person
+get "/people/:id/edit" do
+	@person=Person.find(params[:id])
+	erb :"/people/edit"
+end
+
+#put request to handle the form submission when a person is edited
+#need to find the parameters of the person explicitly in the put request again or the first_name, last_name, and birthdate methods will be undefined
+put "/people/:id" do
+	person = Person.find(params[:id])
+	person.first_name = params[:first_name]
+	person.last_name = params[:last_name]
+	person.birthdate = params[:birthdate]
+	person.save
+	redirect "/people/#{person.id}"
+end
+
 #shows the individual page for each person 
 #shows the result of creating a new person
 get "/people/:id" do
@@ -33,7 +50,5 @@ get "/people/:id" do
 	
 	erb :"/people/show"
 end
-
-
 
 
