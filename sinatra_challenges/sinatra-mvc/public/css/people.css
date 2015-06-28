@@ -1,0 +1,57 @@
+#layout-title {
+	text-align: center;
+}
+
+.person-title{
+	color: red;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 26px;
+	text-align: center;
+	line-height: 30px;
+}
+
+.form-area {
+	margin-left: 325px;
+}
+
+.text-field-header {
+	color: gray;
+}
+
+.textbox {
+	width: 300px;
+	height: 35px;
+}
+
+.button {
+	border: none;
+	background: red;
+	color: white;
+	font-weight: bold;
+	width: 300px;
+	height: 35px;
+}
+
+#index-link {
+	color: red;
+	text-decoration: underline;
+	font-weight: bold;
+	margin-left: 350px;
+}
+
+#add-person-link {
+	margin-left: 350px;
+}
+
+p {
+	text-align: center;
+}
+
+.new-person {
+
+}
+
+.edit-person {
+
+} 

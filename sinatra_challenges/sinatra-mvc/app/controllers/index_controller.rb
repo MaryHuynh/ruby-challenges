@@ -24,8 +24,8 @@ end
 #input a redirect command to another get request within the post request
 #update method call to valid_birthdate and user_birthpath_number methods in Person class
 post "/" do
-	#birthdate = params[:birthdate].gsub("-", "")
-	birthdate = params[:birthdate]
+	birthdate = params[:birthdate].gsub("-", "")
+	#birthdate = params[:birthdate]
 	if(Person.valid_birthdate(birthdate))
 		birth_path_num = Person.get_birth_path_num(birthdate)
 		redirect "/message/#{birth_path_num}"
@@ -39,7 +39,7 @@ end
 #redirect the post request here so that the message is displayed via this get request
 #update method call to message method in Person class
 get "/message/:birth_path_num" do
-	birth_path_num = params[:birth_path_num].to_i
-	@message = Person.get_message(birth_path_num)
+	@birth_path_num = params[:birth_path_num].to_i
+	@message = Person.get_message(@birth_path_num)
 	erb :index
 end
